@@ -1,4 +1,8 @@
 import os
+import django_heroku
+import dj_database_url
+from decouple import config
+
 """
 Django settings for django_project project.
 
@@ -50,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'django_project.urls'
@@ -126,6 +131,10 @@ STATICFILES_DIRS = [
   os.path.join(BASE_DIR, 'static'),
 ]
 
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -136,3 +145,5 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'kr.mishra.3534@gmail.com'
 EMAIL_HOST_PASSWORD = 'tspsjikdpfwrodtx'
 EMAIL_USE_TLS = True
+
+django_heroku.settings(locals())
