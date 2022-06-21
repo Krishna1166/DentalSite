@@ -9,23 +9,23 @@
         <div class="container" data-scrollax-parent="true">
           <div class="row slider-text align-items-end">
             <div class="col-md-7 col-sm-12 ftco-animate mb-5">
-              <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="index.html">Home</a></span> <span>Appointment</span></p>
+              <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="{% url 'home'%}">Home</a></span> <span>Appointment</span></p>
               <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Appointment Status</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
+
 	<center>
         <h1>Appointment Done!</h1>
         <h4>Review Details</h4>
-        <p>Name - {{name}}</p>
-        <p>Email - {{email}}</p>
-        <p>Phone - {{phone}}</p>
-        <p>Date - {{date}}</p>
-        <p>Time - {{time}}</p>
-        <p>Department - {{department}}</p>
-
-    </center>
+        <p><strong>Name</strong> - {{name}}</p>
+        <p><strong>Email</strong> - {{email}}</p>
+        <p><strong>Phone</strong> - {{phone}}</p>
+        <p><strong>Date</strong> - {{date}}</p>
+        <p><strong>Time</strong> - {{time}}</p>
+        <p><strong>Department</strong> - {{department}}</p>
+  </center>
 
 {% endblock %}
